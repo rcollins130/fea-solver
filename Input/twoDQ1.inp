@@ -1,0 +1,30 @@
+*Heading
+A plate problem
+*Node
+1, 0, 1.0
+2, 0,0
+3, 2,0.5
+4, 2, 1
+**CPS4 is the plane stress quadrilateral element
+*Element, type=CPS4, elset=elall
+1, 1,2,3,4
+*Solid Section, elset=elall, material=steel
+1.0
+*Material, name=steel
+*Elastic
+3e+7, 0.3
+*Boundary
+1, 1, 2, 0.0
+2, 1, 2, 0.0
+*Step
+*Static
+1.0, 1., 1e-05, 1.0
+*dload
+1, P4, 20
+*Output, field
+*Output, field, variable=PRESELECT
+*El Print
+s,e
+*Node Print
+u1,u2
+*End Step
